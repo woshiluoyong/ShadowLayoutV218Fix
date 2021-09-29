@@ -341,8 +341,10 @@ public class ShadowLayout extends FrameLayout {
         //优化阴影bitmap大小,将尺寸缩小至原来的1/4。
         dx = dx / 4;
         dy = dy / 4;
-        shadowWidth = shadowWidth / 4;
-        shadowHeight = shadowHeight / 4;
+        int widthVal = shadowWidth / 4;
+        int heightVal = shadowHeight / 4;
+        shadowWidth = widthVal <= 0 ? 1 : widthVal;
+        shadowHeight = heightVal <= 0 ? 1 : heightVal;
         cornerRadius = cornerRadius / 4;
         shadowRadius = shadowRadius / 4;
 
